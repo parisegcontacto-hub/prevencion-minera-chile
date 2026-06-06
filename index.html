@@ -5,6 +5,290 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
+      content="Dashboard profesional de control preventivo para faenas mineras en Chile: cursos, documentacion, acciones y cumplimiento SST."
+    />
+    <meta name="theme-color" content="#1f3b33" />
+    <meta name="application-name" content="PARI-SEG Control SST Minero" />
+    <link rel="manifest" href="./manifest.webmanifest" />
+    <link rel="icon" href="./assets/app-icon.svg" type="image/svg+xml" />
+    <title>PARI-SEG Control SST Minero</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="sidebar" aria-label="Navegacion principal">
+        <a class="brand" href="#inicio" aria-label="Ir al inicio">
+          <span class="brand-mark" aria-hidden="true">PS</span>
+          <span>
+            <strong>PARI-SEG</strong>
+            <small>Control SST Minero</small>
+          </span>
+        </a>
+
+        <div class="sidebar-section">
+          <p class="nav-label">Operacion</p>
+          <nav class="nav-list">
+            <a href="#resumen" class="active">Resumen</a>
+            <a href="#faenas">Faenas</a>
+            <a href="#cursos">Cursos</a>
+            <a href="#documentos">Documentacion</a>
+            <a href="#normativa">Normativa</a>
+          </nav>
+        </div>
+
+        <section class="sidebar-panel" aria-labelledby="alert-title">
+          <p id="alert-title" class="eyebrow">Atencion hoy</p>
+          <strong id="sidebarFocus">4 acciones criticas</strong>
+          <span>Prioridad para prevencionista, administrador de contrato y responsables de faena.</span>
+        </section>
+      </aside>
+
+      <main>
+        <section class="topbar" aria-label="Contexto operacional">
+          <div class="topbar-title">
+            <span class="topbar-dot" aria-hidden="true"></span>
+            <strong>Dashboard de prevencion minera</strong>
+            <span>Chile</span>
+          </div>
+          <div class="topbar-meta">
+            <span>Vista ejecutiva</span>
+            <span>Datos de ejemplo</span>
+          </div>
+        </section>
+
+        <header id="inicio" class="hero">
+          <div class="hero-content">
+            <p class="eyebrow">Control por faena minera</p>
+            <h1>Panel de cumplimiento preventivo</h1>
+            <p>
+              Seguimiento ejecutivo de cursos, documentacion, instrumentos preventivos y hallazgos
+              SST por operacion minera.
+            </p>
+            <div class="hero-meta" aria-label="Alcance del tablero">
+              <span>4 faenas activas</span>
+              <span>Cursos, documentos y acciones</span>
+              <span>SST Chile</span>
+            </div>
+            <div class="hero-actions">
+              <a href="#cursos" class="primary-action">Ver registros</a>
+              <button id="installAppButton" class="secondary-action" type="button" hidden>Instalar app</button>
+            </div>
+          </div>
+
+          <aside class="hero-insights" aria-label="Estado global">
+            <div class="hero-status">
+              <span class="pulse" aria-hidden="true"></span>
+              <span>Actualizado con datos de ejemplo</span>
+            </div>
+            <div class="insight-grid">
+              <div class="insight-card">
+                <span>Cobertura</span>
+                <strong>100%</strong>
+                <small>faenas visibles</small>
+              </div>
+              <div class="insight-card">
+                <span>Revision</span>
+                <strong>SST</strong>
+                <small>control operacional</small>
+              </div>
+            </div>
+          </aside>
+        </header>
+
+        <section class="filters" aria-label="Filtros del dashboard">
+          <div class="filters-header">
+            <div>
+              <p class="eyebrow">Filtros</p>
+              <h2>Mesa de control</h2>
+            </div>
+            <span>Segmenta por faena, categoria, estado o responsable.</span>
+          </div>
+
+          <div class="filters-grid">
+            <label>
+              Faena
+              <select id="siteFilter"></select>
+            </label>
+            <label>
+              Categoria
+              <select id="categoryFilter">
+                <option value="all">Todas</option>
+                <option value="Cursos">Cursos</option>
+                <option value="Documentacion">Documentacion</option>
+                <option value="Acciones">Acciones</option>
+              </select>
+            </label>
+            <label>
+              Estado
+              <select id="statusFilter">
+                <option value="all">Todos</option>
+                <option value="Al dia">Al dia</option>
+                <option value="Por vencer">Por vencer</option>
+                <option value="Vencido">Vencido</option>
+                <option value="Critico">Critico</option>
+              </select>
+            </label>
+            <label class="search-field">
+              Buscar
+              <input id="searchInput" type="search" placeholder="Curso, documento, responsable..." />
+            </label>
+          </div>
+        </section>
+
+        <section id="resumen" class="kpi-grid" aria-label="Indicadores principales">
+          <article class="metric-card metric-compliance">
+            <span>Cumplimiento global</span>
+            <strong id="overallCompliance">0%</strong>
+            <small id="overallTrend">Sin datos</small>
+          </article>
+          <article class="metric-card metric-courses">
+            <span>Cursos al dia</span>
+            <strong id="coursesCurrent">0%</strong>
+            <small id="coursesDetail">0 de 0 registros</small>
+          </article>
+          <article class="metric-card metric-docs">
+            <span>Documentos vencidos</span>
+            <strong id="expiredDocs">0</strong>
+            <small>Incluye MIPER, RIOHS y planes</small>
+          </article>
+          <article class="metric-card urgent">
+            <span>Acciones criticas</span>
+            <strong id="criticalActions">0</strong>
+            <small>Requieren cierre inmediato</small>
+          </article>
+        </section>
+
+        <section class="dashboard-grid">
+          <article class="panel chart-panel">
+            <div class="panel-heading">
+              <div>
+                <p class="eyebrow">Distribucion</p>
+                <h2>Estado de cumplimiento</h2>
+              </div>
+              <button id="resetFilters" class="ghost-button" type="button">Limpiar filtros</button>
+            </div>
+            <div class="chart-wrap">
+              <div id="statusDonut" class="donut" role="img" aria-label="Grafico circular de estados"></div>
+              <div id="statusLegend" class="legend"></div>
+            </div>
+          </article>
+
+          <article class="panel">
+            <div class="panel-heading">
+              <div>
+                <p class="eyebrow">Riesgo por faena</p>
+                <h2>Ranking operativo</h2>
+              </div>
+            </div>
+            <div id="siteRanking" class="ranking-list" aria-live="polite"></div>
+          </article>
+        </section>
+
+        <section id="faenas" class="panel wide-panel">
+          <div class="panel-heading">
+            <div>
+              <p class="eyebrow">Faenas activas</p>
+              <h2>Vista por operacion minera</h2>
+            </div>
+          </div>
+          <div id="siteCards" class="site-grid"></div>
+        </section>
+
+        <section id="cursos" class="panel wide-panel">
+          <div class="panel-heading">
+            <div>
+              <p class="eyebrow">Cursos y credenciales</p>
+              <h2>Seguimiento de capacitacion</h2>
+            </div>
+            <div class="heading-actions">
+              <span id="recordCount" class="count-pill">0 registros</span>
+              <button id="exportCsvButton" type="button">Exportar CSV</button>
+            </div>
+          </div>
+
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>Faena</th>
+                  <th>Tipo</th>
+                  <th>Item</th>
+                  <th>Responsable</th>
+                  <th>Vence</th>
+                  <th>Estado</th>
+                </tr>
+              </thead>
+              <tbody id="recordsTable"></tbody>
+            </table>
+          </div>
+        </section>
+
+        <section id="documentos" class="dashboard-grid">
+          <article class="panel">
+            <div class="panel-heading">
+              <div>
+                <p class="eyebrow">Documentacion clave</p>
+                <h2>Proximos vencimientos</h2>
+              </div>
+            </div>
+            <div id="dueSoonList" class="task-list"></div>
+          </article>
+
+          <article class="panel">
+            <div class="panel-heading">
+              <div>
+                <p class="eyebrow">Gestion SST</p>
+                <h2>Acciones abiertas</h2>
+              </div>
+            </div>
+            <div id="actionList" class="task-list"></div>
+          </article>
+        </section>
+
+        <section id="normativa" class="panel normative-panel">
+          <div class="panel-heading">
+            <div>
+              <p class="eyebrow">Base normativa referencial</p>
+              <h2>Chile, seguridad y salud en faenas mineras</h2>
+            </div>
+          </div>
+          <div class="norm-grid">
+            <a href="https://www.dt.gob.cl/portal/1626/w3-article-127643.html" target="_blank" rel="noreferrer">
+              <strong>DS 44 gestion preventiva</strong>
+              <span>MIPER, programa de trabajo, mapas de riesgos, SG-SST y participacion.</span>
+            </a>
+            <a href="https://www.suseso.cl/613/w3-propertyvalue-68955.html" target="_blank" rel="noreferrer">
+              <strong>Ley 16.744</strong>
+              <span>Seguro social contra accidentes del trabajo y enfermedades profesionales.</span>
+            </a>
+            <a href="https://www.dt.gob.cl/legislacion/1624/w3-article-59796.html" target="_blank" rel="noreferrer">
+              <strong>DS 594 condiciones sanitarias</strong>
+              <span>Condiciones sanitarias y ambientales basicas en lugares de trabajo.</span>
+            </a>
+            <a href="https://www.sernageomin.cl/wp-content/uploads/2017/11/Reglamento-seguridad-minera.pdf" target="_blank" rel="noreferrer">
+              <strong>DS 132 seguridad minera</strong>
+              <span>Reglamento de Seguridad Minera administrado por Sernageomin.</span>
+            </a>
+          </div>
+          <p class="legal-note">
+            Esta maqueta es una base de control operacional y no reemplaza la revision legal,
+            tecnica ni la validacion del organismo administrador o autoridad competente.
+          </p>
+        </section>
+      </main>
+    </div>
+
+    <script src="./data.js"></script>
+    <script src="./app.js"></script>
+  </body>
+</html>
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
       content="Dashboard de control preventivo para faenas mineras en Chile: cursos, documentacion, acciones y cumplimiento."
     />
     <meta name="theme-color" content="#166b66" />
