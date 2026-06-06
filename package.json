@@ -1,0 +1,11 @@
+{
+  "name": "dashboard-prevencion-minera-chile",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Dashboard estatico de prevencion de riesgos laborales por faena minera en Chile.",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js",
+    "check": "node --check app.js && node --check data.js && node --check server.js && node --check sw.js"
+  }
+}
