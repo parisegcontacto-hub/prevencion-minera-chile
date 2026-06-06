@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="520" viewBox="0 0 1600 520" role="img" aria-labelledby="title desc">
+  <title id="title">Faena minera estilizada</title>
+  <desc id="desc">Ilustracion sobria de una faena minera con cerros, caminos, planta y correas transportadoras.</desc>
+  <defs>
+    <linearGradient id="sky" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#44645c"/>
+      <stop offset="0.56" stop-color="#8d744f"/>
+      <stop offset="1" stop-color="#c47a42"/>
+    </linearGradient>
+    <linearGradient id="hill" x1="0" x2="1">
+      <stop offset="0" stop-color="#283c37"/>
+      <stop offset="1" stop-color="#5e4c35"/>
+    </linearGradient>
+  </defs>
+  <rect width="1600" height="520" fill="url(#sky)"/>
+  <path d="M0 292L96 250L180 270L284 210L380 248L484 184L602 238L722 170L840 236L966 190L1086 228L1184 176L1296 236L1420 194L1600 248V520H0Z" fill="url(#hill)" opacity=".88"/>
+  <path d="M0 368C164 322 318 322 478 362C670 410 840 402 1016 348C1212 288 1400 304 1600 362V520H0Z" fill="#17211f" opacity=".78"/>
+  <path d="M0 438H1600V520H0Z" fill="#121b19"/>
+  <path d="M790 160L902 438H864L818 324H690L642 438H604L726 160Z" fill="#d6c0a5" opacity=".24"/>
+  <path d="M710 294H806L758 184Z" fill="#111917" opacity=".5"/>
+  <path d="M962 268H1140V438H962Z" fill="#263530"/>
+  <path d="M986 296H1116V438H986Z" fill="#17211f"/>
+  <path d="M1018 228H1084V268H1018Z" fill="#bd8054"/>
+  <path d="M1030 190H1072V228H1030Z" fill="#263530"/>
+  <path d="M198 414L620 296L628 320L206 438Z" fill="#d9b17f" opacity=".55"/>
+  <path d="M198 438H640" stroke="#d9b17f" stroke-width="8" opacity=".58"/>
+  <path d="M286 398L306 438M382 372L402 438M478 346L498 438M574 320L594 438" stroke="#d9b17f" stroke-width="7" opacity=".44"/>
+  <path d="M1208 348H1470V438H1208Z" fill="#25342f"/>
+  <path d="M1240 380H1438" stroke="#d9b17f" stroke-width="12" opacity=".32"/>
+  <path d="M1254 410H1426" stroke="#d9b17f" stroke-width="12" opacity=".24"/>
+  <circle cx="244" cy="432" r="30" fill="#2a3934"/>
+  <circle cx="244" cy="432" r="12" fill="#151f1d"/>
+  <circle cx="370" cy="432" r="30" fill="#2a3934"/>
+  <circle cx="370" cy="432" r="12" fill="#151f1d"/>
+  <path d="M216 374H386L424 420H178Z" fill="#bb7543"/>
+  <path d="M250 340H334L386 374H216Z" fill="#d2a063"/>
+  <path d="M1052 78C1106 96 1140 132 1154 184" stroke="#d7b58a" stroke-width="10" opacity=".2" fill="none"/>
+  <path d="M1100 72C1156 102 1190 144 1206 202" stroke="#d7b58a" stroke-width="8" opacity=".16" fill="none"/>
+</svg>
