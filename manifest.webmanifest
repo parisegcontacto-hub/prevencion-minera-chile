@@ -1,4 +1,24 @@
 {
+  "name": "PARI-SEG Control SST Minero",
+  "short_name": "PARI-SEG SST",
+  "description": "Aplicacion de control preventivo para cursos, documentacion y acciones SST por faena minera en Chile.",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#eef1f0",
+  "theme_color": "#1f3b33",
+  "orientation": "any",
+  "lang": "es-CL",
+  "icons": [
+    {
+      "src": "./assets/app-icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}
+{
   "name": "Prevencion Minera Chile",
   "short_name": "Prevencion Minera",
   "description": "Aplicacion de control preventivo para cursos, documentacion y acciones SST por faena minera en Chile.",
