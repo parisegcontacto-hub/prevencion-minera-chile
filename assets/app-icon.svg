@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512" role="img" aria-labelledby="title desc">
+  <title id="title">Icono Prevencion Minera Chile</title>
+  <desc id="desc">Escudo verde con montanas, check de cumplimiento y acento cobre.</desc>
+  <rect width="512" height="512" rx="96" fill="#166b66"/>
+  <path d="M74 332L148 242L214 310L290 178L438 332V390H74Z" fill="#f4f6f2" opacity=".92"/>
+  <path d="M74 390H438V424H74Z" fill="#d69252"/>
+  <path d="M155 261L213 319L290 185L438 338V390H226Z" fill="#c77c44" opacity=".52"/>
+  <circle cx="158" cy="154" r="50" fill="#f4f6f2"/>
+  <path d="M134 154L151 171L184 134" fill="none" stroke="#166b66" stroke-width="20" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
