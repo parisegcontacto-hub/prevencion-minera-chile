@@ -33,5 +33,3 @@ jobs:
       - name: Publicar
         id: deployment
         uses: actions/deploy-pages@v4
-*** Add File: outputs/dashboard-prevencion-minera-chile/.nojekyll
-
